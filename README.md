@@ -1,66 +1,39 @@
-# 🩻 Medical Imaging Diagnosis Agent
+## 🧬 Multimodal AI Agent
 
-A Medical Imaging Diagnosis Agent build on agno powered by Gemini 2.0 Flash that provides AI-assisted analysis of medical images of various scans. The agent acts as a medical imaging diagnosis expert to analyze various types of medical images and videos, providing detailed diagnostic insights and explanations.
+A Streamlit application that combines video analysis and web search capabilities using Google's Gemini 2.0 model. This agent can analyze uploaded videos and answer questions by combining visual understanding with web-search.
 
-## Features
+### Features
 
-- **Comprehensive Image Analysis**
-  - Image Type Identification (X-ray, MRI, CT scan, ultrasound)
-  - Anatomical Region Detection
-  - Key Findings and Observations
-  - Potential Abnormalities Detection
-  - Image Quality Assessment
-  - Research and Reference
+- Video analysis using Gemini 2.0 Flash
+- Web research integration via DuckDuckGo
+- Support for multiple video formats (MP4, MOV, AVI)
+- Real-time video processing
+- Combined visual and textual analysis
 
-## How to Run
+### How to get Started?
 
-1. **Setup Environment**
-   ```bash
-   # Clone the repository
-   git clone https://github.com/Shubhamsaboo/awesome-llm-apps.git
-   cd ai_agent_tutorials/ai_medical_imaging_agent
+1. Clone the GitHub repository
 
-   # Install dependencies
-   pip install -r requirements.txt
-   ```
+```bash
+git clone https://github.com/Shubhamsaboo/awesome-llm-apps.git
+cd ai_agent_tutorials/multimodal_ai_agent
+```
+2. Install the required dependencies:
 
-2. **Configure API Keys**
-   - Get Google API key from [Google AI Studio](https://aistudio.google.com)
+```bash
+pip install -r requirements.txt
+```
+3. Get your Google Gemini API Key
 
-3. **Run the Application**
-   ```bash
-   streamlit run ai_medical_imaging.py
-   ```
+- Sign up for an [Google AI Studio account](https://aistudio.google.com/apikey) and obtain your API key.
 
-## Analysis Components
+4. Set up your Gemini API Key as the environment variable
 
-- **Image Type and Region**
-  - Identifies imaging modality
-  - Specifies anatomical region
+```bash
+GOOGLE_API_KEY=your_api_key_here
+```
 
-- **Key Findings**
-  - Systematic listing of observations
-  - Detailed appearance descriptions
-  - Abnormality highlighting
-
-- **Diagnostic Assessment**
-  - Potential diagnoses ranking
-  - Differential diagnoses
-  - Severity assessment
-
-- **Patient-Friendly Explanations**
-  - Simplified terminology
-  - Detailed first-principles explanations
-  - Visual reference points
-
-## Notes
-
-- Uses Gemini 2.0 Flash for analysis
-- Requires stable internet connection
-- Free API usage costs -  1,500 free requests per day by google!
-- For educational and development purposes only
-- Not a replacement for professional medical diagnosis
-
-## Disclaimer
-
-This tool is for educational and informational purposes only. All analyses should be reviewed by qualified healthcare professionals. Do not make medical decisions based solely on this analysis.
+5. Run the Streamlit App
+```bash
+streamlit run multimodal_agent.py
+```
