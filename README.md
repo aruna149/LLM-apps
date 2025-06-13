@@ -1,52 +1,51 @@
-## 📰 ➡️ 🎙️ Blog to Podcast Agent
-This is a Streamlit-based application that allows users to convert any blog post into a podcast. The app uses OpenAI's GPT-4 model for summarization, Firecrawl for scraping blog content, and ElevenLabs API for generating audio. Users simply input a blog URL, and the app will generate a podcast episode based on the blog.
+## 📰 Multi-agent AI news assistant
+This Streamlit application implements a sophisticated news processing pipeline using multiple specialized AI agents to search, synthesize, and summarize news articles. It leverages the Llama 3.2 model via Ollama and DuckDuckGo search to provide comprehensive news analysis.
 
-## Features
 
-- **Blog Scraping**: Scrapes the full content of any public blog URL using Firecrawl API.
+### Features
+- Multi-agent architecture with specialized roles:
+    - News Searcher: Finds recent news articles
+    - News Synthesizer: Analyzes and combines information
+    - News Summarizer: Creates concise, professional summaries
 
-- **Summary Generation**: Creates an engaging and concise summary of the blog (within 2000 characters) using OpenAI GPT-4.
+- Real-time news search using DuckDuckGo
+- AP/Reuters-style summary generation
+- User-friendly Streamlit interface
 
-- **Podcast Generation**: Converts the summary into an audio podcast using the ElevenLabs voice API.
 
-- **API Key Integration**: Requires OpenAI, Firecrawl, and ElevenLabs API keys to function, entered securely via the sidebar.
+### How to get Started?
 
-## Setup
+1. Clone the GitHub repository
+```bash
+git clone https://github.com/your-username/ai-news-processor.git
+cd awesome-llm-apps/ai_agent_tutorials/local_news_agent_openai_swarm
+```
 
-### Requirements 
+2. Install the required dependencies:
 
-1. **API Keys**:
-    - **OpenAI API Key**: Sign up at OpenAI to obtain your API key.
+```bash
+pip install -r requirements.txt
+```
 
-    - **ElevenLabs API Key**: Get your ElevenLabs API key from ElevenLabs.
+3. Pull and Run Llama 3.2 using Ollama:
 
-    - **Firecrawl API Key**: Get your Firecrawl API key from Firecrawl.
+```bash
+# Pull the model
+ollama pull llama3.2
 
-2. **Python 3.8+**: Ensure you have Python 3.8 or higher installed.
+# Verify installation
+ollama list
 
-### Installation
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/Shubhamsaboo/awesome-llm-apps
-   cd ai_agent_tutorials/ai_blog_to_podcast_agent
-   ```
+# Run the model (optional test)
+ollama run llama3.2
+```
 
-2. Install the required Python packages:
-   ```bash
-   pip install -r requirements.txt
-   ```
-### Running the App
-
-1. Start the Streamlit app:
-   ```bash
-   streamlit run blog_to_podcast_agent.py
-   ```
-
-2. In the app interface:
-    - Enter your OpenAI, ElevenLabs, and Firecrawl API keys in the sidebar.
-
-    - Input the blog URL you want to convert.
-
-    - Click "🎙️ Generate Podcast".
-
-    - Listen to the generated podcast or download it.
+4. Create a .env file with your configurations:
+```bash
+OPENAI_BASE_URL=http://localhost:11434/v1
+OPENAI_API_KEY=fake-key 
+```
+5. Run the Streamlit app
+```bash
+streamlit run news_agent.py
+```
