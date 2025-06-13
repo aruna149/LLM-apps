@@ -1,50 +1,39 @@
-# OpenAI Researcher Agent
-A multi-agent research application built with OpenAI's Agents SDK and Streamlit. This application enables users to conduct comprehensive research on any topic by leveraging multiple specialized AI agents.
+## 💻 Web Scrapping AI Agent
+This Streamlit app allows you to scrape a website using OpenAI API and the scrapegraphai library. Simply provide your OpenAI API key, enter the URL of the website you want to scrape, and specify what you want the AI agent to extract from the website.
 
 ### Features
-
-- Multi-Agent Architecture:
-    - Triage Agent: Plans the research approach and coordinates the workflow
-    - Research Agent: Searches the web and gathers relevant information
-    - Editor Agent: Compiles collected facts into a comprehensive report
-
-- Automatic Fact Collection: Captures important facts from research with source attribution
-- Structured Report Generation: Creates well-organized reports with titles, outlines, and source citations
-- Interactive UI: Built with Streamlit for easy research topic input and results viewing
-- Tracing and Monitoring: Integrated tracing for the entire research workflow
+- Scrape any website by providing the URL
+- Utilize OpenAI's LLMs (GPT-3.5-turbo or GPT-4) for intelligent scraping
+- Customize the scraping task by specifying what you want the AI agent to extract
 
 ### How to get Started?
 
 1. Clone the GitHub repository
+
 ```bash
 git clone https://github.com/Shubhamsaboo/awesome-llm-apps.git
-cd awesome-llm-apps/ai_agent_tutorials/openai_researcher_agent
+cd awesome-llm-apps/advanced_tools_frameworks/web_scrapping_ai_agent
 ```
-
 2. Install the required dependencies:
 
 ```bash
-cd awesome-llm-apps/ai_agent_tutorials/openai_researcher_agent
 pip install -r requirements.txt
 ```
-
 3. Get your OpenAI API Key
 
-- - Sign up for an [OpenAI account](https://platform.openai.com/) and obtain your API key.
-- Set your OPENAI_API_KEY environment variable.
+- Sign up for an [OpenAI account](https://platform.openai.com/) (or the LLM provider of your choice) and obtain your API key.
+
+4. Run the Streamlit App
 ```bash
-export OPENAI_API_KEY='your-api-key-here'
+streamlit run ai_scrapper.py
 ```
 
-4. Run the team of AI Agents
-```bash
-streamlit run openai_researcher_agent.py
-```
+### How it Works?
 
-Then open your browser and navigate to the URL shown in the terminal (typically http://localhost:8501).
-
-### Research Process:
-- Enter a research topic in the sidebar or select one of the provided examples
-- Click "Start Research" to begin the process
-- View the research process in real-time on the "Research Process" tab
-- Once complete, switch to the "Report" tab to view and download the generated report
+- The app prompts you to enter your OpenAI API key, which is used to authenticate and access the OpenAI language models.
+- You can select the desired language model (GPT-3.5-turbo or GPT-4) for the scraping task.
+- Enter the URL of the website you want to scrape in the provided text input field.
+- Specify what you want the AI agent to extract from the website by entering a user prompt.
+- The app creates a SmartScraperGraph object using the provided URL, user prompt, and OpenAI configuration.
+- The SmartScraperGraph object scrapes the website and extracts the requested information using the specified language model.
+- The scraped results are displayed in the app for you to view
