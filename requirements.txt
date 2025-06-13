@@ -1,3 +1,5 @@
-streamlit 
-scrapegraphai
-playwright
+agno
+duckduckgo-search
+yfinance
+fastapi[standard] 
+openai
